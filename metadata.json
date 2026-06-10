@@ -1,0 +1,6 @@
+{
+  "name": "Nexus Automation Pack",
+  "description": "Uma landing page premium para o Nexus Automation Pack contendo engenharia visual e simulador de workflows n8n.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
