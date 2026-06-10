@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { NexusLogo } from './Icons';
 import { ArrowRight } from 'lucide-react';
 

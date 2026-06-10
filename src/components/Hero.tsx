@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { 
   ShieldCheck, 
   Sparkles, 
@@ -138,6 +138,34 @@ export const Hero: React.FC = () => {
               QUERO VER AS AUTOMAÇÕES QUE O MERCADO COMPRA
               <ArrowRight size={14} className="stroke-[3] transition-transform duration-300 group-hover:translate-x-1" />
             </button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-zinc-300"
+          >
+            <div className="inline-flex items-center gap-2 text-emerald-400">
+              <span className="text-base leading-none">✓</span>
+              Acesso Imediato
+            </div>
+            <div className="inline-flex items-center gap-2 text-emerald-400">
+              <span className="text-base leading-none">✓</span>
+              Download Instantâneo
+            </div>
+            <div className="inline-flex items-center gap-2 text-emerald-400">
+              <span className="text-base leading-none">✓</span>
+              Garantia de 7 Dias
+            </div>
+            <div className="inline-flex items-center gap-2 text-emerald-400">
+              <span className="text-base leading-none">✓</span>
+              Atualizações Futuras
+            </div>
+            <div className="inline-flex items-center gap-2 text-emerald-400 sm:col-span-2">
+              <span className="text-base leading-none">✓</span>
+              Biblioteca Premium
+            </div>
           </motion.div>
 
           {/* Trust badges underneath */}

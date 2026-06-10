@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { Problem } from './components/Problem';
 import { VideoSection } from './components/VideoSection';
 import { WorkflowSection } from './components/WorkflowSection';
+import { ProofSection } from './components/ProofSection';
 import { ModulesSection } from './components/ModulesSection';
 import { Testimonials } from './components/Testimonials';
 import { PricingSection } from './components/PricingSection';
@@ -37,6 +38,9 @@ export default function App() {
 
         {/* The beautiful n8n Workflow editor simulator Section */}
         <WorkflowSection />
+
+        {/* Proof section showing product mockup, document pages and workflow application */}
+        <ProofSection />
 
         {/* Deliverable/Modules details Section */}
         <ModulesSection />

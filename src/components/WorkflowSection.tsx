@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Play, 
-  Terminal, 
-  Sliders, 
-  Cpu, 
-  CheckCircle2, 
-  Plus, 
-  Settings, 
-  HelpCircle, 
-  Braces, 
-  RefreshCw 
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Play,
+  Terminal,
+  Sliders,
+  CheckCircle2,
+  RefreshCw,
+  Braces,
+  ShoppingBag,
+  Package,
+  UserCheck,
+  Handshake,
+  CreditCard
 } from 'lucide-react';
-import { 
-  GmailIcon, 
-  n8nIcon, 
-  SlackIcon, 
-  GoogleDriveIcon, 
-  WebhookIcon 
+import {
+  GmailIcon,
+  n8nIcon,
+  SlackIcon,
+  GoogleDriveIcon,
+  WebhookIcon,
+  StripeIcon,
+  OpenAIIcon
 } from './Icons';
 
 // Type definitions for high-fidelity workflow nodes
@@ -45,14 +48,14 @@ export const WorkflowSection: React.FC = () => {
       id: 'input-node',
       name: 'Stripe Purchase',
       type: 'Trigger (Input)',
-      icon: <div className="p-2 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-500"><Plus size={18} /></div>,
-      brandColor: 'pink',
+      icon: <div className="p-2 rounded-lg bg-[#635BFF]/10 border border-[#635BFF]/20 text-[#635BFF]"><StripeIcon size={18} /></div>,
+      brandColor: 'sky',
       status: 'idle',
       executionTime: '8ms',
       parameters: [
         { label: 'Event Trigger', value: 'checkout.session.completed' },
         { label: 'Payment Status', value: 'paid' },
-        { label: 'Live Mode', value: 'true' }
+        { label: 'Amount', value: 'R$ 27,90' }
       ],
       jsonOutput: JSON.stringify({
         event: "checkout.session.completed",
@@ -71,13 +74,13 @@ export const WorkflowSection: React.FC = () => {
       name: 'n8n Listen Webhook',
       type: 'Webhook Listener',
       icon: <div className="p-2 rounded-lg bg-[#FF6C88]/10 border border-[#FF6C88]/20"><WebhookIcon size={18} className="text-[#FF6C88]" /></div>,
-      brandColor: 'orange',
+      brandColor: 'rose',
       status: 'idle',
       executionTime: '3ms',
       parameters: [
         { label: 'HTTP Method', value: 'POST' },
-        { label: 'Path', value: '/v1/stripe-purchase-webhook' },
-        { label: 'Response Mode', value: 'On Received (200)' }
+        { label: 'Path', value: '/webhook/stripe-event' },
+        { label: 'Authentication', value: 'Secret Token' }
       ],
       jsonOutput: JSON.stringify({
         webhook: "Active",
@@ -97,14 +100,14 @@ export const WorkflowSection: React.FC = () => {
       id: 'process-node',
       name: 'License Key Gen',
       type: 'Process Node (JS)',
-      icon: <div className="p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400"><Cpu size={18} /></div>,
+      icon: <div className="p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400"><OpenAIIcon size={18} /></div>,
       brandColor: 'indigo',
       status: 'idle',
       executionTime: '14ms',
       parameters: [
-        { label: 'Operation', value: 'Generate Crypto UUID' },
-        { label: 'Token Duration', value: 'Lifetime access' },
-        { label: 'Format Type', value: 'SHA256 Hash Link' }
+        { label: 'AI Validation', value: 'OpenAI' },
+        { label: 'Prompt', value: 'Validar metas do pedido' },
+        { label: 'Output', value: 'Confirmação + Texto de Email' }
       ],
       jsonOutput: JSON.stringify({
         generation: "successful",
@@ -122,9 +125,9 @@ export const WorkflowSection: React.FC = () => {
       status: 'idle',
       executionTime: '45ms',
       parameters: [
-        { label: 'Action', value: 'Get Shareable Download Link' },
-        { label: 'Folder Target', value: 'Nexus_Pack_Source_V1' },
-         { label: 'File Type', value: 'Interactive PDF + Source Node Code' }
+        { label: 'Action', value: 'Fetch PDF + Assets' },
+        { label: 'Folder', value: 'Nexus_Pack_Source_V1' },
+        { label: 'File Type', value: 'Protected PDF + Node Map' }
       ],
       jsonOutput: JSON.stringify({
         status: "FOUND",
@@ -143,9 +146,9 @@ export const WorkflowSection: React.FC = () => {
       status: 'idle',
       executionTime: '128ms',
       parameters: [
-        { label: 'Recipient (To)', value: 'carlos.du@gmail.com' },
-        { label: 'Sender (From)', value: 'contato@nexus-pack.com' },
-        { label: 'Email Template', value: 'Welcome_Deliver_Pack_Vol1' }
+        { label: 'Recipient', value: 'carlos.du@gmail.com' },
+        { label: 'Sender', value: 'contato@nexus-pack.com' },
+        { label: 'Template', value: 'Entrega de Acesso' }
       ],
       jsonOutput: JSON.stringify({
         status: "DELIVERED",
@@ -163,9 +166,9 @@ export const WorkflowSection: React.FC = () => {
       status: 'idle',
       executionTime: '22ms',
       parameters: [
-        { label: 'Slack Channel', value: '#nexus-vendas-v1' },
-        { label: 'Channel ID', value: 'CH_019BF73A' },
-        { label: 'Message Color', value: '#2EB67D (Success Green)' }
+        { label: 'Workspace', value: 'Nexus Sales Alerts' },
+        { label: 'Channel', value: '#nexus-vendas-v1' },
+        { label: 'Notification', value: 'Venda Confirmada' }
       ],
       jsonOutput: JSON.stringify({
         slack_api_post: "OK",

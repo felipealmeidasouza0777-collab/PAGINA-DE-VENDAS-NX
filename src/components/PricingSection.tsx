@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Check, ShieldAlert, ArrowRight, Sparkles } from 'lucide-react';
 
 const PRODUCT_BOX_IMG = '/src/assets/images/nexus_product_box_1781114997650.png';
