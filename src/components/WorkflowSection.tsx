@@ -11,14 +11,14 @@ import {
   Package,
   UserCheck,
   Handshake,
-  CreditCard
+  CreditCard,
+  Link2
 } from 'lucide-react';
 import {
   GmailIcon,
   n8nIcon,
   SlackIcon,
   GoogleDriveIcon,
-  WebhookIcon,
   StripeIcon,
   OpenAIIcon
 } from './Icons';
@@ -73,7 +73,7 @@ export const WorkflowSection: React.FC = () => {
       id: 'webhook-node',
       name: 'n8n Listen Webhook',
       type: 'Webhook Listener',
-      icon: <div className="p-2 rounded-lg bg-[#FF6C88]/10 border border-[#FF6C88]/20"><WebhookIcon size={18} className="text-[#FF6C88]" /></div>,
+      icon: <div className="p-2 rounded-lg bg-[#FF6C88]/10 border border-[#FF6C88]/20 text-[#FF6C88]"><Link2 size={18} /></div>,
       brandColor: 'rose',
       status: 'idle',
       executionTime: '3ms',

@@ -7,7 +7,7 @@ import {
   SiWhatsapp,
   SiAirtable,
   SiOpenai,
-  SiN8n,
+  SiN8N,
   SiGoogledrive,
   SiStripe
 } from 'react-icons/si';
@@ -57,7 +57,7 @@ export const OpenAIIcon: React.FC<{ className?: string; size?: number }> = ({ cl
 );
 
 export const n8nIcon: React.FC<{ className?: string; size?: number }> = ({ className = '', size = 20 }) => (
-  <SiN8n className={className} size={size} style={{ color: '#EA4B71' }} />
+  <SiN8N className={className} size={size} style={{ color: '#EA4B71' }} />
 );
 
 export const GoogleDriveIcon: React.FC<{ className?: string; size?: number }> = ({ className = '', size = 20 }) => (

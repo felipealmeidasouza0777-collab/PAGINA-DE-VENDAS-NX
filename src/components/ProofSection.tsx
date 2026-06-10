@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SiGoogleDrive, SiGmail, SiOpenai, SiStripe, SiN8n, SiAirtable, SiGoogleSheets, SiWhatsapp, SiSlack, SiNotion } from 'react-icons/si';
+import { SiGoogledrive, SiGmail, SiOpenai, SiStripe, SiN8N, SiAirtable, SiGooglesheets, SiWhatsapp, SiSlack, SiNotion } from 'react-icons/si';
 
 const PRODUCT_BOX_IMG = '/src/assets/images/nexus_product_box_1781114997650.png';
 
@@ -59,7 +59,7 @@ export const ProofSection: React.FC = () => {
         >
           <div className="grid grid-cols-[auto_1fr] gap-4 items-start rounded-3xl border border-white/10 bg-[#09090d] p-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#111116] border border-white/10 text-[#FF6C88]">
-              <SiGoogleSheets size={24} />
+              <SiGooglesheets size={24} />
             </div>
             <div>
               <p className="text-[10px] font-mono uppercase tracking-[0.35em] text-zinc-500">Página interna do PDF</p>
@@ -89,7 +89,7 @@ export const ProofSection: React.FC = () => {
         >
           <div className="flex items-center gap-4 rounded-3xl border border-white/10 bg-[#09090d] p-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#111116] border border-white/10 text-emerald-400">
-              <SiN8n size={24} />
+              <SiN8N size={24} />
             </div>
             <div>
               <p className="text-[10px] font-mono uppercase tracking-[0.35em] text-zinc-500">Workflow</p>
@@ -101,7 +101,7 @@ export const ProofSection: React.FC = () => {
               <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-2 text-xs text-zinc-300">
                 <SiStripe size={14} className="text-sky-400" /> Stripe</span>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-2 text-xs text-zinc-300">
-                <SiGoogleDrive size={14} className="text-emerald-400" /> Drive</span>
+                <SiGoogledrive size={14} className="text-emerald-400" /> Drive</span>
             </div>
             <div className="grid gap-3">
               <div className="rounded-2xl bg-zinc-950/95 p-3 border border-white/5">
